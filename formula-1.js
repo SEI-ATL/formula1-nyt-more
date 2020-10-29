@@ -1,4 +1,4 @@
-const drivers = [
+const driverInfo = [
     { player: 'Lewis Hamilton', rank: 1, team: 'Mercedes', number: 44, points: 256, country: 'United Kingdom' },
     { player: 'Valtteri Bottas', rank: 2, team: 'Mercedes', number: 77, points: 179, country: 'Finland' },
     { player: 'Max Verstappen', rank: 3, team: 'Red Bull Racing', number: 33, points: 256, country: 'United Kingdom' },
@@ -22,7 +22,7 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
+// console.log(driverInfo);
 
 /* **************************************************************************************
 
@@ -30,6 +30,17 @@ console.log(drivers);
   and make an instance of every driver in the array of drivers from above. Hint: Iterator
 
 ******************************************************************************************/
+class Driver {
+  constructor(name, team, country) {
+    this.name = name;
+    this.team = team;
+    this.country = country;
+  }
+}
+const driversAbbrev = [];
 
-
-// Write code here
+driverInfo.forEach((driverObj) => {
+  let driver = new Driver(driverObj.player, driverObj.team, driverObj.country);
+  driversAbbrev.push(driver);
+})
+console.log(driversAbbrev);
