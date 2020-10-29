@@ -31,5 +31,14 @@ console.log(drivers);
 
 ******************************************************************************************/
 
+for (let i = 0; i < drivers.length; i++ ){
 
-// Write code here
+  function Driver(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+  let currentDriver = drivers[i]
+  currentDriver = new Driver(Object.values(currentDriver)[0], Object.values(currentDriver)[2],Object.values(currentDriver)[5])
+  console.log(currentDriver)
+}
