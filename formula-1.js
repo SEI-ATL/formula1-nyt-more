@@ -33,3 +33,22 @@ console.log(drivers);
 
 
 // Write code here
+
+class Driver {
+  constructor(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+}
+
+let createNewProfiles = array => {
+  let newProfiles = [];
+  array.forEach(object => {
+    let newProfile = new Driver(object.player, object.team, object.country);
+    newProfiles.push(newProfile);
+  });
+  return newProfiles;
+};
+
+console.log(createNewProfiles(drivers));
