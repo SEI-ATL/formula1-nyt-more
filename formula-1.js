@@ -22,7 +22,7 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
+//console.log(drivers);
 
 /* **************************************************************************************
 
@@ -30,6 +30,19 @@ console.log(drivers);
   and make an instance of every driver in the array of drivers from above. Hint: Iterator
 
 ******************************************************************************************/
-
-
-// Write code here
+function filterDrivers(param) {
+  let formDrivers = [];
+  
+  //iterate through here
+  function Driver(player, team, country) {
+      this.player = player;
+      this.team = team;
+      this.country = country;
+  }
+  for(let i=0; i < param.length; i++) {
+    let driver = new Driver(param[i].player, param[i].team, param[i].country)
+    formDrivers.push(driver);
+  }
+ return formDrivers;
+}
+console.log(filterDrivers(drivers));
