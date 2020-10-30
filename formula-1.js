@@ -31,5 +31,24 @@ console.log(drivers);
 
 ******************************************************************************************/
 
-
 // Write code here
+
+function formulaOne(player, team, country) {
+  return {
+    player,
+    team,
+    country
+  }
+}
+
+const driverArray = drivers.map((driver) => {
+  return formulaOne(driver.player,driver.team, driver.country)
+});
+console.log(driverArray);
+
+
+const driverData = [];
+
+driverData.push(driverArray);
+
+console.log(driverData);
