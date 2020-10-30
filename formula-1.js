@@ -33,3 +33,23 @@ console.log(drivers);
 
 
 // Write code here
+
+class FormulaOne {
+  constructor(player, team, country) {
+      this.player = player
+      this.team = team
+      this.country = country
+  }
+}
+
+let constructNewInstances = function(array) {
+  let newInstances = [];
+  array.forEach(element => {
+    let newInstance = new FormulaOne(element.player, element.team, element.country);
+    newInstances.push(newInstance);
+
+});
+return newInstances;
+
+}
+console.log(constructNewInstances(drivers));
