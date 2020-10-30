@@ -33,3 +33,29 @@ console.log(drivers);
 
 
 // Write code here
+
+function Driver(player,team,country) {
+  this.player = player;
+  this.team = team;
+  this.country = country;
+}
+const lewisHamilton = new Driver('Lewis Hamilton', 'Mercedes', 'United Kingdom')
+const valtteriBottas = new Driver('Valtteri Bottas', 'Mercedes', 'Finland')
+const maxVerstappen = new Driver('Max Verstappen', 'Red Bull Racing', 'United Kingdom')
+const danielRicciardo = new Driver('Daniel Ricciardo', 'Renault', 'Australia')
+const charlesLeclerc = new Driver('Charles Leclerc', 'Ferrari', 'Finland')
+const sergioPerez = new Driver('Sergio Perez', 'Racing Point', 'Mexico')
+const landoNorris = new Driver('Lando Norris', 'McLaren', 'United Kingdom')
+const alexanderAlbon = new Driver('Alexander Albon', 'Red Bull Racing', 'Thailand')
+const pierreGasly = new Driver('Pierre Gasly', 'AlphaTauri', 'France')
+const carlosSainz = new Driver('Carlos Sainz', 'McLaren', 'Spain')
+const lanceStroll = new Driver('Lance Stroll', 'Mercedes', 'Canada')
+const estebanOcon = new Driver('Esteban Ocon', 'Renault', 'France')
+const sebastianVettel = new Driver('Sebastian Vettel', 'Ferrari', 'Germany')
+const daniilKvyat = new Driver('Daniil Kvyat', 'AlphaTauri', 'Russian Federation')
+const antonioGiovinazzi = new Driver('Antonio Giovinazzi', 'Alfa Romeo', 'Italy')
+const kimiRäikkönen = new Driver('Kimi Räikkönen', 'Alfa Romeo', 'Finland')
+const romainGrosjean = new Driver('Romain Grosjean', 'Haas', 'France')
+const kevinMagnussen = new Driver('Kevin Magnussen', 'Haas', 'Denmark')
+const nicholasLatifi = new Driver('Nicholas Latifi', 'Williams', 'Canada')
+const georgeRussell = new Driver('George Russell', 'Williams', 'United Kingdom')
