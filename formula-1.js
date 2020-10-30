@@ -31,5 +31,43 @@ console.log(drivers);
 
 ******************************************************************************************/
 
+function filterDrivers(param) {
+  let formDrivers = [];
+  
+  //iterate through here
+  function Driver(player, team, country) {
+      this.player = player;
+      this.team = team;
+      this.country = country;
+  }
+  for(let i=0; i < param.length; i++) {
+    let driver = new Driver(param[i].player, param[i].team, param[i].country)
+    formDrivers.push(driver);
+  }
+ return formDrivers;
+}
+console.log(filterDrivers(drivers));
 
-// Write code here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
