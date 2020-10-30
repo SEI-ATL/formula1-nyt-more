@@ -42,14 +42,14 @@ class FormulaOne {
   }
 }
 
-let constructNewInstances = function(array) {
-  let newInstances = [];
-  array.forEach(element => {
-    let newInstance = new FormulaOne(element.player, element.team, element.country);
-    newInstances.push(newInstance);
+let constructNewInstances = function(array) { //create new variable "constructNewInstances" that is a function that takes in an array.
+  let newInstances = []; // create a new variable "newInstances" that is an empty array.
+  array.forEach(element => { // iterate thru each element and
+    let newInstance = new FormulaOne(element.player, element.team, element.country); //create new variable "newInstance"
+    newInstances.push(newInstance); // push the resulting new instance into the empty newInstances array.
 
 });
 return newInstances;
 
 }
-console.log(constructNewInstances(drivers));
+console.log(constructNewInstances(drivers)); // log the new function with the passthru of the drivers array above.
