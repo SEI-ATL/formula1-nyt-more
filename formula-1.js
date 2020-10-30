@@ -33,3 +33,13 @@ console.log(drivers);
 
 
 // Write code here
+
+function FormulaOne(player, team, country) {
+  this.player = player;
+  this.team = team;
+  this.country = country;
+}
+
+// console.log(new FormulaOne(drivers[0].player, drivers[0].team, drivers[0].country));
+
+// let x = drivers.forEach(element => console.log(new FormulaOne(element.player, element.team, element.country)))
