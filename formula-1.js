@@ -22,7 +22,7 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
+// console.log(drivers);
 
 /* **************************************************************************************
 
@@ -33,3 +33,24 @@ console.log(drivers);
 
 
 // Write code here
+
+
+
+function filterDriversInfo(drivers) {
+  let eachDriver = []
+  
+  function FormulaOne(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+  for (let i = 0; i < drivers.length; i++) {
+    const driversInfo = new FormulaOne(drivers[i].player, drivers[i].team, drivers[i].country)
+    eachDriver.push(driversInfo);
+  }
+    return eachDriver;
+
+}
+
+console.log(filterDriversInfo(drivers));
+
