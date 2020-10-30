@@ -47,7 +47,7 @@ class Car {
 
 
     //////////////Promise///
-    //setting up the promise to return ERROR if the method of above instances WORKS to make sure all is wired up properly!!
+    //setting up the promise to return ERROR if the method of above instances WORKS to make sure all is wired up properlys!!
 
    
   const conditionalPromise = new Promise (function(resolve, reject){
