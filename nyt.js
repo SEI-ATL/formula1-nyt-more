@@ -5,27 +5,39 @@ fetch(`https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather
 .then(response => response.json())
 .then((data) => {
     console.log(data.results);
-    // const movieReviewArray = data.results;
+    // using the spread operator to add each element as a copy to this new element
     let movieReviewArray = [...data.results];
-    movieReviewArray.push({name: 'Rome Bell', movie: 'Intense series. Making history.'});
+    console.log('Movie Array');
     console.log(movieReviewArray);
-
+    
     for(let i = 0; i < movieReviewArray.length; i++) {
         let movieObject = movieReviewArray[i];
-
-        // let {  } = coolNewObject;
-        let {display_title, mpaa_rating, critics_pick } = movieObject;
-
+        
+        // Destructuring - take key out of an object and being able to reference those keys without saying movieObject['display_title]
+        let { display_title, mpaa_rating, critics_pick } = movieObject;
+        
         const eachMovie = new Movie(display_title, mpaa_rating, critics_pick);
+        console.log('Movie');
         console.log(eachMovie);
-        console.log(eachMovie.mmpaRating);
         
     }
 
 });
 
+const king = 'Stephen+King'
+
+fetch(`https://api.nytimes.com/svc/books/v3/reviews.json?author=${king}&api-key=${API_KEY}`)
+.then(response => {
+    // console.log(response);
+    return response.json();
+})
+.then(nytData => {
+    console.log('New York Times Book Review Data');
+    console.log(nytData);
+})
+
+// byLine, headline, summaryShort, publicationData, openingDate, dateUpdated, link, ultimedia
 function Movie(displayTitle, mmpaRating, criticsPick) {
-    // byLine, headline, summaryShort, publicationData, openingDate, dateUpdated, link, ultimedia
     this.displayTitle = displayTitle;
     this.mmpaRating = mmpaRating;
     this.criticsPick = criticsPick;
@@ -38,3 +50,17 @@ function Movie(displayTitle, mmpaRating, criticsPick) {
     // this.dateUpdated = dateUpdated;
     // this.ultimedia = ultimedia;
 }
+
+const fetchTopStories = async function () {
+    const topStoriesData = await fetch(`https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${API_KEY}`)
+    const data = await topStoriesData.json();
+    console.log('Science Topics');
+    console.log(data.results);
+    
+}
+
+fetchTopStories();
+
+// Resources:
+// https://stackoverflow.com/questions/7486085/copy-array-by-value
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment

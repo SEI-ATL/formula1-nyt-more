@@ -22,7 +22,7 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
+// console.log(drivers);
 
 /* **************************************************************************************
 
@@ -33,3 +33,18 @@ console.log(drivers);
 
 
 // Write code here
+
+function FormulaOne(player, team, country) {
+  this.player = player;
+  this.team = team;
+  this.country = country;
+}
+
+const officalDrivers = [];
+
+drivers.forEach(eachDriver => {
+  const formulaOneDriver = new FormulaOne(eachDriver.player, eachDriver.team, eachDriver.country);
+  officalDrivers.push(formulaOneDriver);
+})
+
+console.log(officalDrivers);
