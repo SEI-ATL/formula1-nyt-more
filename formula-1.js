@@ -59,3 +59,10 @@ const romainGrosjean = new Driver('Romain Grosjean', 'Haas', 'France')
 const kevinMagnussen = new Driver('Kevin Magnussen', 'Haas', 'Denmark')
 const nicholasLatifi = new Driver('Nicholas Latifi', 'Williams', 'Canada')
 const georgeRussell = new Driver('George Russell', 'Williams', 'United Kingdom')
+
+for (let i = 0; i < drivers.length; i++) {
+  let driverObject = drivers[i];
+  let {player,team,country} = driverObject;
+  const eachDriver = new Driver(player,team,country);
+  console.log(eachDriver);
+}
