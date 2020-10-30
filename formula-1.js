@@ -22,8 +22,6 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
-
 /* **************************************************************************************
 
   Write  a factory function FormulaOne that takes in 3 parameters (player, team, country) 
@@ -31,5 +29,20 @@ console.log(drivers);
 
 ******************************************************************************************/
 
+function filterDrivers(param) {
+  let formDrivers = [];
+  
+  //iterate through here
+  function Driver(player, team, country) {
+      this.player = player;
+      this.team = team;
+      this.country = country;
+  }
+  for(let i=0; i < param.length; i++) {
+    let driver = new Driver(param[i].player, param[i].team, param[i].country)
+    formDrivers.push(driver);
+  }
 
-// Write code here
+ return formDrivers;
+}
+console.log(filterDrivers(drivers));
