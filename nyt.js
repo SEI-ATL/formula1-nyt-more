@@ -1,3 +1,4 @@
-console.log(credentials);
+console.log(API_KEY);
+
 
 // Write code here
