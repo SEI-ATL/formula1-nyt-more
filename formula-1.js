@@ -43,4 +43,4 @@ driverInfo.forEach((driverObj) => {
   let driver = new Driver(driverObj.player, driverObj.team, driverObj.country);
   driversAbbrev.push(driver);
 })
-console.log(driversAbbrev);
+// console.log(driversAbbrev);
