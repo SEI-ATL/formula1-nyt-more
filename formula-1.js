@@ -24,12 +24,23 @@ const drivers = [
 
 console.log(drivers);
 
-/* **************************************************************************************
+// **************************************************************************************
 
-  Write  a factory function FormulaOne that takes in 3 parameters (player, team, country) 
-  and make an instance of every driver in the array of drivers from above. Hint: Iterator
+//   Write  a factory function FormulaOne that takes in 3 parameters (player, team, country) 
+//   and make an instance of every driver in the array of drivers from above. Hint: Iterator
 
-******************************************************************************************/
+// ******************************************************************************************
 
+// I noticed I couldn't use forEach(). I'm guessing because its not within the scope of the array before the console log?
 
-// Write code here
+function formulaOne(player, number, country) {
+  if(drivers.value === true) {
+ for (i = 0; i < drivers.length; i++) {
+   var randomDriver = drivers[Math.floor(Math.random() * drivers.length)];
+  } 
+} else {
+    console.log("Go Home plz");
+  }
+  }
+}
+formulaOne();

@@ -19,6 +19,8 @@ const API_KEY = 'apikeygoeshere';
 - Once you are able to print that to the console. You can now use that inside of the `nyt.js` file. 😎
 - Once you fetch the data, try using `async/await` to see if you can replace the `.then` syntax.
 
+
+
 ## Class & Promise
 - Practicing using the above 2 problems make a `class` and make a few instances inside of the `other.js` file
 - Practicing make a Promise inside `other.js` with the above two problems in a creative way and make sure that it is working
