@@ -33,3 +33,22 @@ console.log(drivers);
 
 
 // Write code here
+
+class FormulaOne {
+  constructor(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+}
+
+function driverArray(array) {
+  const newDriversArray = [];
+  for (i = 0; i < array.length; i++) {
+    newDriversArray.push(new FormulaOne(array[i].player, array[i].team, array[i].country))
+  }
+  return newDriversArray
+}
+
+
+console.log(driverArray(drivers));
