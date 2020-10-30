@@ -32,4 +32,25 @@ console.log(drivers);
 ******************************************************************************************/
 
 
+
 // Write code here
+let newArray = [];
+
+function FormulaOne(player, team, country){
+    const driver = {
+      player : player,
+      team : team,
+      country: country
+    }; 
+newArray.push(driver);
+}
+
+function everyDriver(){
+  for(let i=0; i<drivers.length; i++){
+   FormulaOne(drivers[i].player,drivers[i].team,drivers[i].country) 
+  }
+return newArray
+}
+console.log(everyDriver());
+
+
