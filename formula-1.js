@@ -33,3 +33,15 @@ console.log(drivers);
 
 
 // Write code here
+
+function FormulaOne(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+}
+
+const instances = drivers.map(function(driver) {
+    return 
+});
+
+console.log(instances);
