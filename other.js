@@ -48,12 +48,13 @@ function handleFulfilled(array){
 
 let topTenDrivers = new Promise(function(resolve, reject) {
     let array = drivers; 
+    debugger
     console.log(array)
     for (i = 0; i < array.length; i++) {
         if (array[i].rank <= 10) {   
             resolve(handleFulfilled(array[i]));
         } else {
-            reject();
+            reject('this was rejected');
         }
     }
     }
