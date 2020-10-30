@@ -20,9 +20,9 @@ const drivers = [
     { player: 'Kevin Magnussen', rank: 19, team: 'Haas', number: 20, points: 1, country: 'Denmark' },
     { player: 'Nicholas Latifi', rank: 20, team: 'Williams', number: 6, points: 0, country: 'Canada' },
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
-]
+];
 
-console.log(drivers);
+
 
 /* **************************************************************************************
 
@@ -33,3 +33,69 @@ console.log(drivers);
 
 
 // Write code here
+//Build the class a class constructor function
+class Driver {
+  constructor(player, team, country){
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+};
+ function filterDrivers (array, first, second, third){
+array.forEach(driver => {
+  let p;
+  let t;
+  let c;
+
+for (const prop in driver) {
+ if (prop ===first) {
+  // console.log(`${prop} = ${driver[prop]}`);
+  p = driver[prop]
+  }
+  if (prop ===second) {
+    // console.log(`${prop} = ${driver[prop]}`);
+    t = driver[prop];
+    }
+    if (prop ===third) {
+      // console.log(`${prop} = ${driver[prop]}`);
+      c= driver[prop]; 
+      }
+  } 
+  //////////////get the new instance here ////////////////
+  let newDriver = new Driver(p,t,c);
+  driver.profile = newDriver;
+  ///////////////////////////
+  
+
+  ////////////OPTIONAL BELOW///////////////////
+  //automated the functin to great web-page elements//
+  //console.log(newDriver);
+  //console.log(newDriver[first]);
+  let card = document.createElement('div');
+  card.setAttribute('class','card');
+  let masterDiv = document.querySelector('.container')
+  masterDiv.appendChild(card);
+  let name = document.createElement('h3');
+  let textName1 = `${first} : ${newDriver[first]}`;
+  name.innerText = textName1
+  name.setAttribute('class',`${first}`);
+  card.appendChild(name);
+  let text1 = document.createElement('h4');
+  let textName2 = `${second} : ${newDriver[second]}`;
+  text1.innerText = textName2;
+  text1.setAttribute('class',`${second}`);
+  card.appendChild(text1);
+  let text2 = document.createElement('h4');
+  let textName3 = `${third} : ${newDriver[third]}`;
+  text2.innerText = textName3;
+  text2.setAttribute('class',`${third}`);
+  card.appendChild(text2);
+
+});
+
+}
+///call function///
+filterDrivers(drivers,'player','team','country');
+
+//console.log(drivers);
+
