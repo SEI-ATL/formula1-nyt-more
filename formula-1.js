@@ -33,3 +33,20 @@ console.log(drivers);
 
 
 // Write code here
+/* Write a factory function `FormulaOne` inside of `formula-1.js` that takes in 3 parameters `(player, team, country)` 
+and make an instance of every driver in the array of drivers inside of `formula-1.js`. Hint: Iterators */
+
+class FormulaOne {
+    constructor(player, team, country) {
+        this.player = player;
+        this.team = team;
+        this.country = country;
+    }
+}
+
+const newDrivers = drivers.map(function(driver) {
+    newDriver = new FormulaOne(driver.player, driver.team, driver.country);
+    return newDriver;
+})
+
+console.log(newDrivers);
