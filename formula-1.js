@@ -22,14 +22,63 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
-
 /* **************************************************************************************
 
-  Write  a factory function FormulaOne that takes in 3 parameters (player, team, country) 
+  Write  a factory function FormulaOne that takes in 3 parameters (player, team, country)
   and make an instance of every driver in the array of drivers from above. Hint: Iterator
 
 ******************************************************************************************/
 
 
 // Write code here
+
+//  V.1 Takes only 3 params
+class Driver{
+  constructor(player, team, country){
+    this.player = player;
+    this.team = team;
+    this.country = country;
+
+  }
+}
+
+//initialize empty array
+let classDriver = [];
+for(let i=0; i<drivers.length; i++){
+  classDriver[i] = new Driver (drivers[i].player, drivers[i].team, drivers[i].country);
+}
+
+console.log(classDriver);
+
+
+// V.2 map it by creating an array of classes
+const driverClass = drivers.map(d => {return new Driver(d.player, d.team, d.country)});
+console.log(driverClass);
+
+
+
+//v.3 Take entire element into class w/ map
+// makes instance w/ all params
+class DriverAlt{
+  constructor(fOneDriver){
+    this.player = fOneDriver.player;
+    this.rank = fOneDriver.rank;
+    this.team = fOneDriver.team;
+    this.number = fOneDriver.number;
+    this.points = fOneDriver.points;
+    this.country = fOneDriver.country;
+  }
+
+  // create a function to print the selected fields
+  printStuff(){
+    console.log(`Player: ${this.player}, Team: ${this.team}, Country: ${this.country}`);
+  }
+}
+
+//create an array of classes
+const driverClass2 = drivers.map(d => {return new DriverAlt(d)});
+
+// call the print function for each class
+for (let i=0; i<driverClass2.length; i++){
+  driverClass2[i].printStuff();
+}
