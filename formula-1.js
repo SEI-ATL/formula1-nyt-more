@@ -33,3 +33,19 @@ console.log(drivers);
 
 
 // Write code here
+
+function formulaOne(player, team, country) {
+  return {
+    player,
+    team,
+    country
+  }
+}
+
+  const driverPlayer = drivers.map((driver) => {
+  return formulaOne(driver.player, driver.team, driver.country)
+  });
+  
+  console.log(driverPlayer);
+  
+
