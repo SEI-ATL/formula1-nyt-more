@@ -31,5 +31,36 @@ console.log(drivers);
 
 ******************************************************************************************/
 
+///////////// Two ways: //////////////
 
-// Write code here
+class FormulaOne {
+  constructor(player, team, country) {
+    this.player = player;
+    this.team = team;
+    this.country = country;
+  }
+}
+function newFilter(array) {
+  const newArray = [];
+  for (i = 0; i < array.length; i++) {
+    let newformulaone = new FormulaOne(array[i].player, array[i].team, array[i].country);
+    newArray.push(newformulaone);
+  }
+  return newArray;
+}
+console.log(newFilter(drivers));
+
+//////////////////////////////////
+
+function oldFilter(array) {
+  const newArray = [];
+  for (i = 0; i < array.length; i++) {
+    let player = array[i].player; 
+    let team = array[i].team;
+    let country = array[i].country;
+    newArray.push({player: player, team: team, country: country})
+  }
+  return newArray;
+}
+const newArray = oldFilter(drivers);
+console.log(newArray);
