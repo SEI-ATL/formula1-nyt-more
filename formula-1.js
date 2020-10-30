@@ -40,8 +40,15 @@ function FormulaOne(player, team, country) {
     this.country = country;
 }
 
-const instances = drivers.map(function(driver) {
-    return 
-});
+const instances = [];
+
+function createInstances(array) {
+    for (let i = 0; i < array.length; i++) {
+        instances.push(new FormulaOne(array[i].player, array[i].team, array[i].country));
+    }
+    return instances;
+}
+
+createInstances(drivers);
 
 console.log(instances);
