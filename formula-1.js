@@ -22,6 +22,7 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
+
 console.log(drivers);
 
 /* **************************************************************************************
@@ -33,3 +34,21 @@ console.log(drivers);
 
 
 // Write code here
+
+//Step 1. Factory Function FormulaOne
+function findTheDriver(parameters) {
+  let createDrivers = [];
+  
+  //Step 2. Leg work. Run function
+  function Driver(player, team, country) {
+      this.player = player;
+      this.team = team;
+      this.country = country;
+  }
+  for(let i=0; i < parameters.length; i++) {
+    let driver = new Driver(parameters[i].player, parameters[i].team, parameters[i].country)
+    createDrivers.push(driver);
+  }
+ return createDrivers;
+}
+console.log(findTheDriver(drivers));
