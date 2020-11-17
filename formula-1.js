@@ -1,3 +1,4 @@
+const container = document.querySelector('.container')
 const drivers = [
     { player: 'Lewis Hamilton', rank: 1, team: 'Mercedes', number: 44, points: 256, country: 'United Kingdom' },
     { player: 'Valtteri Bottas', rank: 2, team: 'Mercedes', number: 77, points: 179, country: 'Finland' },
@@ -22,8 +23,48 @@ const drivers = [
     { player: 'George Russell', rank: 21, team: 'Williams', number: 63, points: 0, country: 'United Kingdom' },
 ]
 
-console.log(drivers);
+// console.log(drivers[2]);
 
+const newElement = (tagType,classes) =>{
+  const element = document.createElement(tagType)
+  for (let i = 0; i < classes.length; i++){
+    element.classList.add(classes[i])
+  }
+  return element
+}
+//factory function
+function Racer(player, team, country){
+  this.driverName = player
+  this.team = team
+  this.country = country
+}
+
+//make all drivers
+const createDrivers = (arrayOfDrivers) =>{
+  const racers = []
+  console.log('the create drivers functio is running');
+  for (let i = 0; i < arrayOfDrivers.length; i++){
+    const racer = new Racer(arrayOfDrivers[i].player,arrayOfDrivers[i].team,arrayOfDrivers[i].country)
+    racers.push(racer)
+    const card = displayDriver(racer)
+    container.appendChild(card)
+    // console.log(racer.driverName);
+  }
+  
+}
+
+createDrivers(drivers)
+
+function displayDriver(driver){
+  const card = newElement('div',['card'])
+  const rank = newElement('div',[])
+  const info = newElement('div',[])
+  rank.textContent = driver.rank
+  info.textContent = `${driver.driverName}/${driver.country}`
+  card.append(rank,info)
+  console.log(card);
+  return card
+}
 /* **************************************************************************************
 
   Write  a factory function FormulaOne that takes in 3 parameters (player, team, country) 
@@ -33,3 +74,8 @@ console.log(drivers);
 
 
 // Write code here
+
+
+const card = displayDriver(drivers)
+
+container.appendChild(card)
