@@ -33,3 +33,9 @@ console.log(drivers);
 
 
 // Write code here
+FormulaOne() {
+  const everybody = [];
+  return everybody;
+};
+
+console.log(FormulaOne);
